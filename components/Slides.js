@@ -8,7 +8,7 @@ class Slides extends Component {
     renderSlides() {
         return this.props.data.map((slide) => {
             return (
-                <View key={slide.text} style={styles.slideStyle}>
+                <View key={slide.text} style={[styles.slideStyle, {backgroundColor: slide.color}]}>
                     <Text style={styles.textStyle}>
                         {slide.text}
                     </Text>
@@ -19,7 +19,7 @@ class Slides extends Component {
 
     render() {
         return (
-            <ScrollView horizontal style={{ flex: 1 }}>
+            <ScrollView horizontal pagingEnabled style={{ flex: 1 }}>
                 {this.renderSlides()}
             </ScrollView>
         );
