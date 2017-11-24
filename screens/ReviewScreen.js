@@ -13,6 +13,8 @@ class ReviewScreen extends Component {
 
 // Instead of using the react-native-elements button, use the one from react-native
   // Then it will already look native
+// Could not use this.props.navigation.navigate here because only instances of the class recieve the prop
+  // Class-level property vs instance-level property 
   static navigationOptions = ({ navigation}) => ({
     title: 'Review Jobs',
     headerRight: <Button title="Settings" onPress={() => { navigation.navigate('settings') }} backgroundColor="rgba(0,0,0,0)" color="rgba(0,122,255,1)" />

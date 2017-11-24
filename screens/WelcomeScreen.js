@@ -10,9 +10,17 @@ const slideData = [
 ]
 
 class WelcomeScreen extends Component {
+  onSlidesComplete = () => {
+    // WelcomeScreen recieved the navigation prop as a result of the initiation of the MainNavigator in the 
+      // main App class. ReactNavigation will pass down this prop (this.props.navigation.navigate) to any
+      // components that it renders
+    this.props.navigation.navigate('auth')
+  }
+
+  // if onSlidesComplete were not an arrow function, it would be necessary to use .bind(this) in the prop below
   render() {
     return (
-      <Slides data={slideData} />
+      <Slides data={slideData} onComplete={this.onSlidesComplete}/>
     );
   }
 }

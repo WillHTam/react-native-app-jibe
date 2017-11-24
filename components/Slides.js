@@ -9,7 +9,9 @@ class Slides extends Component {
     renderLastSlide(index) {
         if (index === this.props.data.length - 1) {
             return (
-                <Button style={styles.buttonStyle} title="Get Dat Paper" raised />
+                // Button from RNE does not accept style, instead only specific prop names like buttonStyle and textStyle
+                // onComplete has not parentheses because otherwise it would be called when the button is rendered
+                <Button buttonStyle={styles.buttonStyle} title="Get Dat Paper" raised onPress={this.props.onComplete} />
             )
         }
     }
@@ -45,10 +47,12 @@ const styles = {
     },
     textStyle: {
         fontSize: 30,
-        color: 'white'
+        color: 'white',
+        textAlign: 'center'
     },
     buttonStyle: {
-        marginTop: 5
+        marginTop: 5,
+        backgroundColor: '#0288D1'
     }
 };
 
