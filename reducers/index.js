@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import auth from './auth_reducer';
 
+// In Redux, must have at least one reducer which cannot return undefined. 
 export default combineReducers({
-    auth: auth
-});
+    auth: () => { return {} }
+})

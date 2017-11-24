@@ -12,7 +12,7 @@
         "redux": "^3.7.2",
         "redux-thunk": "^2.2.0"
     },
-    "name": "mealpal-rn",
+    "name": "Jobes",
     "version": "0.0.0",
     "description": "Hello Expo!",
     "author": "mealpal-fe"
