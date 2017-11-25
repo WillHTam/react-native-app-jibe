@@ -32,6 +32,8 @@ class App extends React.Component {
                     }
                 })
             }
+        }, {
+            lazy: true
         });
 
         return (
