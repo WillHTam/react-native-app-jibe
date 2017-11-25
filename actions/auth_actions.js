@@ -1,12 +1,12 @@
 // House all action creators with Facebook here
 
-import { AsyncStorage } from 'react-native'
+import { AsyncStorage } from 'react-native';
 // Async Storage of React Native allows small snippets of data
     // to persist between executions of the app. A key-value store similar to a browser's local storage
 // By default, the entire store is flushed when the app is exited,
     // so we should save the token in the AsyncStorage so that the app remembers
     // the token and thus if the user is logged in 
-import { Facebook } from 'expo'
+import { Facebook } from 'expo';
 
 import {
     FACEBOOK_LOGIN_SUCCESS, 
