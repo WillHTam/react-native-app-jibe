@@ -7,7 +7,7 @@ const slideData = [
   { text: 'Use Jobe to find jobe', color: '#03A8F3'},
   { text: 'Set Location then Swipe', color: '#009688'},
   { text: 'Tinder for jobe', color: '#03A9F4' }
-]
+];
 
 class WelcomeScreen extends Component {
   onSlidesComplete = () => {
@@ -23,6 +23,6 @@ class WelcomeScreen extends Component {
       <Slides data={slideData} onComplete={this.onSlidesComplete}/>
     );
   }
-}
+};
 
 export default WelcomeScreen;

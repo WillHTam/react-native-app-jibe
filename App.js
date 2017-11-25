@@ -33,6 +33,9 @@ class App extends React.Component {
                 })
             }
         }, {
+            navigationOptions: {
+                tabBarVisible: false
+            },
             lazy: true
         });
 
@@ -44,7 +47,7 @@ class App extends React.Component {
             </Provider>
         ); 
     }
-}
+};
 
 const styles = StyleSheet.create({
     container: {

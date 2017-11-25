@@ -6,7 +6,7 @@ import * as actions from '../actions';
 class AuthScreen extends Component {
     componentDidMount() {
         this.props.facebookLogin();
-        AsyncStorage.removeItem('fb_token')
+        // AsyncStorage.removeItem('fb_token')
     }
 
     render () {
@@ -18,7 +18,7 @@ class AuthScreen extends Component {
             </View>
         );
     }
-}
+};
 
 // first argument is map state to props, and the second is action creators
 export default connect(null, actions)(AuthScreen);
