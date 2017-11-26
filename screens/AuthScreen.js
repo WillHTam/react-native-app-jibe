@@ -28,6 +28,8 @@ class AuthScreen extends Component {
 
     render () {
         return(
+            // No need to display anything because this component only displays the 
+                // Facebook login modal
             <View />
         );
     }

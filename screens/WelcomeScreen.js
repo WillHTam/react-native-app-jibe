@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import { View, Text } from "react-native";
+import { View, Text, AsyncStorage } from "react-native";
+import { AppLoading } from 'expo';
+import _ from 'lodash';
 
 import Slides from '../components/Slides';
 
@@ -10,6 +12,22 @@ const slideData = [
 ];
 
 class WelcomeScreen extends Component {
+  // start with null state for token b/c don't know if it exists yet.
+  // true if exists, false otherwise
+  // if true, we can not display the WelcomeScreen
+    // hide loading from *Async*storage by extending loading screen.
+  state = { token: null }
+
+  async componentWillMount() {
+    let token = await AsyncStorage.getItem('fb_token');
+
+    if (token) {
+      this.props.navigation.navigate('map')
+    } else {
+      this.setState({ token: false })
+    }
+  }
+
   onSlidesComplete = () => {
     // WelcomeScreen recieved the navigation prop as a result of the initiation of the MainNavigator in the 
       // main App class. ReactNavigation will pass down this prop (this.props.navigation.navigate) to any
@@ -19,6 +37,10 @@ class WelcomeScreen extends Component {
 
   // if onSlidesComplete were not an arrow function, it would be necessary to use .bind(this) in the prop below
   render() {
+    if (_.isNull(this.state.token)) {
+      return <AppLoading/>;
+    } 
+
     return (
       <Slides data={slideData} onComplete={this.onSlidesComplete}/>
     );
