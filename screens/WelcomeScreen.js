@@ -18,7 +18,7 @@ class WelcomeScreen extends Component {
     // hide loading from *Async*storage by extending loading screen.
   state = { token: null }
 
-  async componentWillMount() {
+  async componentDidMount() {
     let token = await AsyncStorage.getItem('fb_token');
 
     if (token) {
