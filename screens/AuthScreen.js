@@ -8,6 +8,7 @@ class AuthScreen extends Component {
         this.props.facebookLogin();
         // line below will clear saved token
         // AsyncStorage.removeItem('fb_token');
+        // *SEPARATOR* //
         // this onAuthComplete is unlikely to be called because it
             // is waiting for facebookLogin() to be complete
         this.onAuthComplete(this.props);
