@@ -12,7 +12,7 @@ class DeckScreen extends Component {
   static navigationOptions = {
     title: 'Jobs',
     tabBarIcon: ({tintColor}) => {
-      return <Icon name='hand-spock-o' size={30} color={tintColor} />
+      return <Icon name='work' size={30} color={tintColor} />
     }
   }
 
