@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { View, Text, Platform, ScrollView, Linking } from "react-native";
 import { Button, Card } from 'react-native-elements';
+import { MapView } from 'expo';
 import { connect } from 'react-redux';
 
 class ReviewScreen extends Component {
@@ -25,10 +26,23 @@ class ReviewScreen extends Component {
     return this.props.likedJobs.map(job => {
       // destructure job so that it doesn't have to be constantly called
         // i.e. no job.company and so forth
-      const { company, formattedRelativeTime, url } = job;
+      const { company, formattedRelativeTime, url, longitude, latitude, jobkey } = job;
+      const initialRegion = {
+        longitude,
+        latitude,
+        latitudeDelta: 0.0045,
+        longitudeDelta: 0.02
+      };
+
       return (
-        <Card>
+        <Card title={jobtitle} key={jobkey}>
           <View style={{ height: 200 }}>
+            <MapView 
+              style={{ flex: 1 }}
+              cacheEnabled={Platform.OS === 'android'}
+              scrollEnabled={false}
+              initialRegion={initialRegion}
+            />
             <View style={styles.detailWrapper}>
               <Text style={styles.italics}>{company}</Text>
               <Text style={styles.italics}>{formattedRelativeTime}</Text>
