@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import { View, Text, Platform } from "react-native";
-import { Button } from 'react-native-elements';
+import { Button, Icon } from 'react-native-elements';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 // could be { clearLikedJobs } from '../actions';
 
 class SettingsScreen extends Component {
   static navigationOptions = {
-    header: {
-      style: {
-        marginTop: Platform.OS === 'android' ? 24 : 0
-      }
+    headerStyle: { marginTop: Platform.OS === 'android' ? 24 : 0 },
+    title: 'Settings',
+    tabBarIcon: ({ tintColor }) => {
+      return <Icon />
     }
   }
 

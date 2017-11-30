@@ -19,10 +19,8 @@ class ReviewScreen extends Component {
   // Class-level property vs instance-level property 
   static navigationOptions = ({ navigation}) => ({
     title: 'Review Jobs',
-    tabBar: {
-      icon: ({ tintColor }) => {
+    tabBarIcon: ({ tintColor }) => {
         return <Icon name="favorite" size={30} color={tintColor} />;
-      }
     },
     headerRight: <Button 
                     title="Settings" 
