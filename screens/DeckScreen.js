@@ -43,7 +43,12 @@ class DeckScreen extends Component {
     )
   };
 
-  renderNoMoreCards() {
+  renderNoMoreCards = () => {
+    // Swipe component calls this function, not DeckScreen
+    // Swipe does not have access to this.props.navigation
+    // To fix, bind renderNoMoreCards to DeckScreen
+      // 1) Turn this function into an arrow function (done)
+      // 2) Use this.renderNoMoreCards.bind(this)
     return (
       <Card title="Habis">
         <Button 
