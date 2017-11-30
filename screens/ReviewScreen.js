@@ -19,14 +19,19 @@ class ReviewScreen extends Component {
   // Class-level property vs instance-level property 
   static navigationOptions = ({ navigation}) => ({
     title: 'Review Jobs',
-    headerRight: <Button title="Settings" onPress={() => { navigation.navigate('settings') }} backgroundColor="rgba(0,0,0,0)" color="rgba(0,122,255,1)" />
+    headerRight: <Button 
+                    title="Settings" 
+                    onPress={() => { navigation.navigate('settings') }} 
+                    backgroundColor="rgba(0,0,0,0)" 
+                    color="rgba(0,122,255,1)" 
+                 />
   })
 
   renderLikedJobs() {
     return this.props.likedJobs.map(job => {
       // destructure job so that it doesn't have to be constantly called
         // i.e. no job.company and so forth
-      const { company, formattedRelativeTime, url, longitude, latitude, jobkey } = job;
+      const { company, formattedRelativeTime, url, longitude, latitude, jobkey, jobtitle } = job;
       const initialRegion = {
         longitude,
         latitude,
@@ -69,6 +74,7 @@ class ReviewScreen extends Component {
 
 const styles = {
   detailWrapper: {
+    marginTop: 10,
     marginBottom: 10,
     flexDirection: 'row',
     justifyContent: 'space-around'
