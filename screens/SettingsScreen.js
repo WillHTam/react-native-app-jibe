@@ -16,6 +16,9 @@ class SettingsScreen extends Component {
           backgroundColor="#F44336"
           onPress={this.props.clearLikedJobs}
         />
+        <Text>
+          {'\u2728'}This will clear all your liked Jobs{'\u2728'}
+        </Text>
       </View>
     );
   }
