@@ -10,7 +10,7 @@ class SettingsScreen extends Component {
     headerStyle: { marginTop: Platform.OS === 'android' ? 24 : 0 },
     title: 'Settings',
     tabBarIcon: ({ tintColor }) => {
-      return <Icon />
+      return <Icon name='traffic-cone' size={30} color={tintColor}/>
     }
   }
 
